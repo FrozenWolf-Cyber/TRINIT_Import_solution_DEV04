@@ -1,15 +1,19 @@
 import requests
 import os
 from flask import Flask, request, Response, render_template
+import json
 
 app = Flask(__name__)
 
 def send_request(email):
+    print(email,type(email),flush=True)
     api_endpoint = 'https://www.signalhire.com/api/v1/candidate/search'
-    api_key = {'apikey': '202..SXmJkqnWEQTS5GMEHWIadk6ezgwi'}
+    api_key = {'apikey': '202..SXmJkqnWEQTS5GMEHWIadk6ezgw'}
     payload = {"items":[email], "callbackUrl":"https://profile-finder.herokuapp.com/callback"}
     response = requests.post(api_endpoint,
-                            headers=api_key, data=str(payload))
+                            headers=api_key, data=json.dumps(payload))
+
+    print(response.text,response,flush=True)
 
 @app.route('/', methods = ['POST', 'GET'])
 def home():
@@ -32,8 +36,13 @@ def callback():
     if request.method == 'POST':
         sent_back = request.json
         mailid = sent_back[0]['item']
-        print(mailid,sent_back[0]['candidate']['social']['link'], flush=True)
-        profile_link = sent_back[0]['candidate']['social']['link']
+        print(sent_back, flush=True)
+        profile_link = 0
+        if sent_back[0]['status'] == "failure":
+            profile_link == "Cannot find a link"
+        else:
+            profile_link = sent_back[0]['candidate']['social'][0]['link']
+            
         with open(f"results/{mailid}/id.txt","w") as file:
             file.write(profile_link)
             file.close()
