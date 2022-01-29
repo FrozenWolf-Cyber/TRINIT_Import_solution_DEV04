@@ -1,0 +1,17 @@
+.centre-pos {
+  position: relative;
+  padding-bottom: 2vh;
+  padding-left: 30vh;
+}
+
+.scale-input {
+  transform: scale(0.70);
+}
+
+.scale_up {
+  transform: scale(2.0);
+}
+
+.btn.btn-primary.btn-lg.btn-default.copy {
+}
+
