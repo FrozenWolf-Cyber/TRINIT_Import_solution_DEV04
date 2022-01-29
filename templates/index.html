@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Profile Finder</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/fonts/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/fonts/ionicons.min.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/mystyles.css')}}">
+</head>
+
+<body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="77">
+    <nav class="navbar navbar-light navbar-expand-md fixed-top" id="mainNav">
+        <div class="container"><a class="navbar-brand" href="#">Import SOLUTION</a><button data-bs-toggle="collapse" class="navbar-toggler navbar-toggler-right" data-bs-target="#navbarResponsive" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" value="Menu"><i class="fa fa-bars"></i></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item nav-link"><a class="nav-link active" href="#about">About</a></li>
+                    <li class="nav-item nav-link"><a class="nav-link" href="#contact">contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header class="masthead" style="background-image:url('static/assets/img/intro-bg.jpg');">
+        <div class="bounce animated intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <h1 class="brand-heading">Profile Finder</h1>
+                        <p class="intro-text">Get LinkedIn profile using email id</p><a class="btn btn-link btn-circle" role="button" href="#search"><i class="fa fa-angle-double-down animated"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="text-center download-section content-section" id="search">
+        <div class="container">
+            <div class="col-lg-8 mx-auto">
+                <h1>GET LINKEDIN PROFILE</h1>
+                <p>Enter the the mail id used in LinkedIn profile for contact below.</p>
+                <div class="input-group scale-input" style="padding-bottom: 3vh;">
+                    <div class="input-group-text input-group-prepend"><span class="input-group-text"><i class="icon ion-email scale_up" style="font-size: 24px;"></i></span></div><input class="form-control" id="mailid" type="text">
+                </div>
+                <div class="input-group scale-input" style="padding-bottom: 3vh;">
+                    <div class="input-group-text input-group-prepend"><span class="input-group-text"><i class="icon ion-social-linkedin scale_up" style="font-size: 24px;"></i></span></div><input class="form-control" type="text" id="linkedin" readonly=""><button class="btn btn-primary btn-lg btn-default copy" id="copy" type="button">COPY</button>
+                </div><button class="btn btn-primary btn-lg btn-default" id="search" type="button" onclick="search();">SEARCH</button>
+            </div>
+        </div>
+    </section>
+    <section class="text-center content-section" id="about" style="background-image: url('static/assets/img/downloads-bg.jpg');">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2>About Profile Finder</h2>
+                    <p><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,<br>molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum<br>numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium<br><br><br></p>
+                    <p><br>optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis<br>obcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam<br>nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit,<br>tenetur error, harum nesciunt ipsum debitis quas aliquid. Reprehenderit,<br><br><br></p>
+                    <p><br>quia. Quo neque error repudiandae fuga? Ipsa laudantium molestias eos<br>sapiente officiis modi at sunt excepturi expedita sint? Sed quibusdam<br>recusandae alias error harum maxime adipisci amet laborum. Perspiciatis<br>minima nesciunt dolorem! Officiis iure rerum voluptates a cumque velit<br><br></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="text-center content-section" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2>Contact us</h2>
+                    <p>Feel free to leave us a comment on the<a href="#">&nbsp;Grayscale template overview page</a>&nbsp;to give some feedback about this theme!</p>
+                    <ul class="list-inline banner-social-buttons">
+                        <li class="list-inline-item">&nbsp;<button class="btn btn-primary btn-lg btn-default" type="button"><i class="fa fa-google-plus fa-fw"></i><span class="network-name">&nbsp; Google+</span></button></li>
+                        <li class="list-inline-item">&nbsp;<button class="btn btn-primary btn-lg btn-default" type="button"><i class="fa fa-github fa-fw"></i><span class="network-name">&nbsp;github</span></button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="map-clean"></div>
+    <script src="{{ url_for('static', filename='assets/bootstrap/js/bootstrap.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/js/bs-init.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/js/grayscale.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/js/main.js')}}"></script>
+</body>
+
+</html>
