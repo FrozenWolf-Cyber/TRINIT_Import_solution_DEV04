@@ -43,6 +43,9 @@ https://emailedin.herokuapp.com/
 ## Demo video
 https://drive.google.com/drive/folders/1DcpYq1942a54cjr_e8fC3RKEYaV2hnoF?usp=sharing
 
+https://user-images.githubusercontent.com/57902078/151692244-665ed9dd-58f7-4167-9bb7-342738d0d222.mp4
+
+
 ## Conclusion
 The EmailedIn web application for finding a URL of a LinkedIn profile using only an email-id has been successfully created.
 
