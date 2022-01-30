@@ -5,10 +5,12 @@ import json
 
 app = Flask(__name__)
 
-def send_request(email):
+def send_request(email,key):
     print(email,type(email),flush=True)
     api_endpoint = 'https://www.signalhire.com/api/v1/candidate/search'
     api_key = {'apikey': '202..SXmJkqnWEQTS5GMEHWIadk6ezgw'}
+    if key is not None:
+        api_key['api_key'] = key
     payload = {"items":[email], "callbackUrl":"https://profile-finder.herokuapp.com/callback"}
     response = requests.post(api_endpoint,
                             headers=api_key, data=json.dumps(payload))
@@ -23,9 +25,12 @@ def home():
 def search():
     if request.method == 'POST':
         mailid = request.form['mailid']
+        apikey = request.form['apikey']
+        if apikey == "-1":
+            apikey = None
         if mailid not in os.listdir("results"):
             os.mkdir(f"results/{mailid}")
-        send_request(mailid)
+        send_request(mailid,key=apikey)
         print("started...",flush=True)
         start = "started"
         response_start = Response(start)
@@ -38,8 +43,10 @@ def callback():
         mailid = sent_back[0]['item']
         print(sent_back, flush=True)
         profile_link = 0
-        if sent_back[0]['status'] == "failure":
-            profile_link == "Cannot find a link"
+        if sent_back[0]['status'] == "failed":
+            profile_link = "Cannot find a link"
+        elif sent_back[0]['status'] == "credits_are_over":
+            profile_link = "Free credits are over"
         else:
             profile_link = sent_back[0]['candidate']['social'][0]['link']
             

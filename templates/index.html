@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Profile Finder</title>
+    <title>EmailedIn – The ultimate LinkedIn profile finder</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='assets/bootstrap/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700">
@@ -26,7 +26,7 @@
             </div>
         </div>
     </nav>
-    <header class="masthead" style="background-image:url('static/assets/img/intro-bg.jpg');">
+    <header class="masthead" style="background-image:url('static/assets/img/bg.jpg');">
         <div class="bounce animated intro-body">
             <div class="container">
                 <div class="row">
@@ -39,47 +39,56 @@
         </div>
     </header>
     
-    <section class="text-center download-section content-section" id="search" style="background-color: rgb(73, 75, 77);">
-        <div class="container">
-            <div class="col-lg-8 mx-auto">
+    <section class="text-center download-section content-section" id="search" style="background-image:url('static/assets/img/bg_invert.jpg'); height: 100vh;">
+        <div class="container ">
+            <div class="col-lg-8 mx-auto form-highlight" style="padding-top: 2vh;">
                 <h1>GET LINKEDIN PROFILE</h1>
-                <p style="font-family: Lucida Sans Typewriter; font-size:larger;"> Enter the the mail id used in LinkedIn profile for contact below.</p>
-                <div class="input-group scale-input" style="padding-bottom: 3vh;">
-                    <div class="input-group-text input-group-prepend"><span class="input-group-text"><i class="icon ion-email scale_up" style="font-size: 24px;"></i></span></div><input class="form-control fw-normal" id="mailid" type="text" style="font-family: Comic Sans MS; font-size: 3vh;">
+                <p style="font-family: Lucida Sans Typewriter; font-size:larger;"> Enter a mail ID used in LinkedIn profile</p>
+                <div class="input-group scale-input" style="padding-bottom: 2vh;">
+                    <div class="input-group-text input-group-prepend"><span class="input-group-text"><i class="icon ion-email scale_up" style="font-size: 24px;"></i></span></div><input placeholder="Enter the mailid here" class="form-control fw-normal" id="mailid" type="text" style="font-family: Comic Sans MS; font-size: 3vh;">
                 </div>
                 <div class="input-group scale-input" style="padding-bottom: 3vh;">
-                    <div class="input-group-text input-group-prepend"><span class="input-group-text"><i class="icon ion-social-linkedin scale_up" style="font-size: 24px;"></i></span></div><input class="form-control fw-normal" type="text" style="font-family: Comic Sans MS; font-size: 3vh;" id="linkedin" readonly="">
+                    <div class="input-group-text input-group-prepend"><span class="input-group-text"><i class="icon ion-social-linkedin scale_up" style="font-size: 24px;"></i></span></div><input placeholder="Click SEARCH to start searching" class="form-control fw-normal" type="text" style="font-family: Comic Sans MS; font-size: 3vh;" id="linkedin" readonly="">
                     <button type="button" class="btn btn-default btn-copy js-tooltip js-copy" data-toggle="tooltip" data-placement="bottom" data-copy="john.doe@email.com" title="Copy to clipboard">
                         <!-- icon from google's material design library -->
                         <svg class="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M17,9H7V7H17M17,13H7V11H17M14,17H7V15H14M12,3A1,1 0 0,1 13,4A1,1 0 0,1 12,5A1,1 0 0,1 11,4A1,1 0 0,1 12,3M19,3H14.82C14.4,1.84 13.3,1 12,1C10.7,1 9.6,1.84 9.18,3H5A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3Z" /></svg>
                       COPY</button>
-                </div><button class="btn btn-primary btn-lg btn-default" id="search" type="button" onclick="search();">SEARCH</button>
+                </div>
+                <div class="">
+                    <input onchange="showDiv(this)" type="checkbox" class="form-check-input" id="exampleCheck1" >
+                    <label style="font-family: Century Gothic;" class="fw-normal form-check-label" for="exampleCheck1">Advanced Options<br></label>
+                </div>
+                <div id = "apikey_div" class="input-group scale-input" >
+                    <div class="input-group-text input-group-prepend"><span class="input-group-text"><i class="icon fa fa-key scale_med" style="font-size: 24px;"></i></span></div><input placeholder="Enter the API key here only if needed" class="form-control fw-normal" id="apikey" type="text" style="font-family: Comic Sans MS; font-size: 3vh;">
+                </div>
+
+                <div  style="padding-top: 2vh;padding-bottom: 3vh;"><button class="btn btn-primary btn-lg btn-default" id="search" type="button" onclick="search();">SEARCH</button></div>
             </div>
         </div>
-    </section>
-    <section class="text-center content-section" id="about" style="background-image: url('static/assets/img/downloads-bg.jpg');">
+    </section  style="padding-bottom: 10vh;">
+
+    <section class="text-center content-section" id="about" style="background-image: url('static/assets/img/bg.jpg');">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mx-auto">
-                    <h2>About Profile Finder</h2>
+                    <h2>About EmailedIn</h2>
                     <div class = "fw-normal" style="font-family: Century Gothic;">
-                    <p><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,<br>molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum<br>numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium<br><br><br></p>
-                    <p><br>optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis<br>obcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam<br>nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit,<br>tenetur error, harum nesciunt ipsum debitis quas aliquid. Reprehenderit,<br><br><br></p>
-                    <p><br>quia. Quo neque error repudiandae fuga? Ipsa laudantium molestias eos<br>sapiente officiis modi at sunt excepturi expedita sint? Sed quibusdam<br>recusandae alias error harum maxime adipisci amet laborum. Perspiciatis<br>minima nesciunt dolorem! Officiis iure rerum voluptates a cumque velit<br><br></p>
+                    <p><br>This web application is a submission to the "DEV04" problem statement by the team "import_solution", for the Tri-NITT Hackathon 2022. The main aim of this web app, is to figure out a person's LinkedIn profile using only a Email ID.<br></p>
+                    <p><br>The app uses the <a href = 'https://www.signalhire.com/api'>SignalHire API</a>, to find out the URL to their LinkedIn profile. The API also provides extra information such as name, location, education etc., mentioned in their profile<br></p>
+                    <p><a href = 'https://github.com/FrozenWolf-Cyber/TRINIT_Import_solution_DEV04'>This</a> is the Github repository of this project. </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="text-center content-section" id="contact">
+    <section class="text-center" id="contact">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mx-auto">
                     <h2>Contact us</h2>
-                    <p>Feel free to leave us a comment on the<a href="#">&nbsp;Grayscale template overview page</a>&nbsp;to give some feedback about this theme!</p>
                     <ul class="list-inline banner-social-buttons">
-                        <li class="list-inline-item">&nbsp;<button class="btn btn-primary btn-lg btn-default" type="button" href="https://github.com/"><i class="fa fa-google-plus fa-fw"></i><span class="network-name">&nbsp; Google+</span></button></li>
-                        <li class="list-inline-item">&nbsp;<button class="btn btn-primary btn-lg btn-default" type="button" href="https://github.com/"><i class="fa fa-github fa-fw"></i><span class="network-name">&nbsp;github</span></button></li>
+                        <li class="list-inline-item">&nbsp;<a class="btn btn-primary btn-lg btn-default" type="button" href="mailto:frozenwolf2003.com@gmail.com,aadarsh.ram@gmail.com"><i class="fa fa-google-plus fa-fw"></i><span class="network-name">&nbsp; Google+</span></a></li>
+                        <li class="list-inline-item">&nbsp;<a class="btn btn-primary btn-lg btn-default" type="button" href="https://github.com/aadarsh-ram" onclick="window.open('https://github.com/FrozenWolf-Cyber');"><i class="fa fa-github fa-fw"></i><span class="network-name">&nbsp;github</span></a></li>
                     </ul>
                 </div>
             </div>

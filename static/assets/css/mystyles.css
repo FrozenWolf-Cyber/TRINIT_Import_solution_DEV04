@@ -12,6 +12,16 @@
   transform: scale(2.0);
 }
 
+.scale_med{
+  transform: scale(1.5);
+}
 
+#contact{
+  padding-top: 5vh;;
+}
 
-
+.form-highlight{
+  position: relative;
+  max-height: 100vh;
+  background-color: #3f37c9;
+}
