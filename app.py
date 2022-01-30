@@ -13,7 +13,7 @@ def send_request(email):
     response = requests.post(api_endpoint,
                             headers=api_key, data=json.dumps(payload))
 
-    print(response.text, response, flush=True)
+    print(response.text,response,flush=True)
 
 @app.route('/', methods = ['POST', 'GET'])
 def home():
@@ -38,7 +38,7 @@ def callback():
         mailid = sent_back[0]['item']
         print(sent_back, flush=True)
         profile_link = 0
-        if sent_back[0]['status'].startswith("fail"):
+        if sent_back[0]['status'] == "failure":
             profile_link == "Cannot find a link"
         else:
             profile_link = sent_back[0]['candidate']['social'][0]['link']
@@ -47,7 +47,7 @@ def callback():
             file.write(profile_link)
             file.close()
 
-        return "Success"
+        return "Sucess"
 
 @app.route('/status', methods = ['POST', 'GET'])
 def status():
@@ -60,8 +60,9 @@ def status():
                 return data
         else:
             code = -1
-            response_code = Response("-1")
-            return response_code
+            respone_code = Response("-1")
+            return respone_code
+            
 
 if __name__ == '__main__':
    app.run(host="0.0.0.0",debug=False, port=5000, threaded=True)
