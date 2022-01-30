@@ -11,7 +11,7 @@ def send_request(email,key):
     api_key = {'apikey': '202..SXmJkqnWEQTS5GMEHWIadk6ezgw'}
     if key is not None:
         api_key['api_key'] = key
-    payload = {"items":[email], "callbackUrl":"https://profile-finder.herokuapp.com/callback"}
+    payload = {"items":[email], "callbackUrl":"https://emailedin.herokuapp.com/callback"}
     response = requests.post(api_endpoint,
                             headers=api_key, data=json.dumps(payload))
 
