@@ -3,7 +3,7 @@
 ## Introduction
 A LinkedIn profile is often the best way to get to know a person, without even talking to them. An ideal LinkedIn profile contains their educational qualifications, experience, projects they have worked on, contact info etc. A LinkedIn profile is very useful for recruiters who can get to know more about a candidate applying to a job/internship.
 
-This repository is a submission part to the "DEV04" problem statement by the team "import_solution", for the [Tri-NITT Hackathon 2022](https://tri-nit-hackathon.github.io/).
+This repository is a submission part to the "DEV04" problem statement by the team "import_solution", for the [Tri-NIT Hackathon 2022](https://tri-nit-hackathon.github.io/).
 The problem statement mentions to build an interface that can find a person’s LinkedIn profile using only their email ID. 
 
 ## Proposed Method
@@ -49,7 +49,7 @@ https://user-images.githubusercontent.com/57902078/151692244-665ed9dd-58f7-4167-
 ## Conclusion
 The EmailedIn web application for finding a URL of a LinkedIn profile using only an email-id has been successfully created.
 
-We thank the organizers of Tri-NITT Hackathon 2022 for giving us this opportunity to showcase our skills.
+We thank the organizers of Tri-NIT Hackathon 2022 for giving us this opportunity to showcase our skills.
 
 ## Useful Links
 * [SignalHire API Documentation](https://www.signalhire.com/api)
